@@ -1,0 +1,52 @@
+[project]
+name = "loan-default-predictor"
+version = "0.1.0"
+description = "Predict loan default risk, served as a FastAPI service"
+readme = "README.md"
+authors = [{ name = "adityagupta-u1", email = "aditya.gupin1950@gmail.com" }]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "fastapi>=0.141.1",
+    "imbalanced-learn>=0.14.2",
+    "joblib>=1.6.0",
+    "kaggle>=2.2.4",
+    "lightgbm>=4.7.0",
+    "mlflow>=3.16.1",
+    "optuna>=5.0.0",
+    "pandas>=3.0.6",
+    "pandera>=0.33.1",
+    "polars>=1.44.2",
+    "pydantic>=2.13.5",
+    "scikit-learn>=1.9.1",
+    "shap>=0.52.0",
+    "uvicorn[standard]>=0.54.0",
+    "xgboost>=3.4.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.20,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "ipykernel>=7.3.0",
+    "jupyter>=1.1.1",
+    "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
+    "ruff>=0.16.9",
+]
+
+[tool.uv.build-backend]
+module-name = "loan_default"
+
+[tool.ruff]
+line-length = 100
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
