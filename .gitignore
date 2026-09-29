@@ -8,3 +8,16 @@ wheels/
 
 # Virtual environments
 .venv
+
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+models/*
+!models/.gitkeep
+
+mlruns/
+.env
+.ipynb_checkpoints/
+.pytest_cache/
