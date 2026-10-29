@@ -1377,6 +1377,7 @@ dependencies = [
     { name = "joblib" },
     { name = "kaggle" },
     { name = "lightgbm" },
+    { name = "missingno" },
     { name = "mlflow" },
     { name = "optuna" },
     { name = "pandas" },
@@ -1385,6 +1386,7 @@ dependencies = [
     { name = "pydantic" },
     { name = "python-dotenv" },
     { name = "scikit-learn" },
+    { name = "seaborn" },
     { name = "shap" },
     { name = "uvicorn", extra = ["standard"] },
     { name = "xgboost" },
@@ -1407,6 +1409,7 @@ requires-dist = [
     { name = "joblib", specifier = ">=1.6.0" },
     { name = "kaggle", specifier = ">=2.2.4" },
     { name = "lightgbm", specifier = ">=4.7.0" },
+    { name = "missingno", specifier = ">=0.5.2" },
     { name = "mlflow", specifier = ">=3.16.1" },
     { name = "optuna", specifier = ">=5.0.0" },
     { name = "pandas", specifier = ">=3.0.6" },
@@ -1415,6 +1418,7 @@ requires-dist = [
     { name = "pydantic", specifier = ">=2.13.5" },
     { name = "python-dotenv", specifier = ">=1.2.3" },
     { name = "scikit-learn", specifier = ">=1.9.1" },
+    { name = "seaborn", specifier = ">=0.13.2" },
     { name = "shap", specifier = ">=0.52.0" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.54.0" },
     { name = "xgboost", specifier = ">=3.4.1" },
@@ -1531,6 +1535,22 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz", hash = "sha256:bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba", size = 8729, upload-time = "2022-08-14T12:40:10.846Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl", hash = "sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8", size = 9979, upload-time = "2022-08-14T12:40:09.779Z" },
+]
+
+[[package]]
+name = "missingno"
+version = "0.5.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "matplotlib" },
+    { name = "numpy", version = "2.3.5", source = { registry = "https://pypi.org/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'darwin'" },
+    { name = "numpy", version = "2.5.3", source = { registry = "https://pypi.org/simple" }, marker = "platform_machine != 'x86_64' or sys_platform != 'darwin'" },
+    { name = "scipy" },
+    { name = "seaborn" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/2b/f9/e20220b851bc6d7abf70b403a3080d6af946ed4b13b2bf91ef4e74d2aec9/missingno-0.5.2.tar.gz", hash = "sha256:4a4baa9ca9f9e4e0d9402455df26b656632e94b99e87fa64c0cdbbbc722837ac", size = 17489, upload-time = "2023-02-26T20:10:29.329Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/87/22/cd5cf999af21c2f97486622c551ac3d07361ced8125121e907f588ff5f24/missingno-0.5.2-py3-none-any.whl", hash = "sha256:55782621ce09ba0f0a1d08e5bd6d6fe1946469fb03951fadf7d209911ca5b072", size = 8704, upload-time = "2023-02-26T20:10:26.042Z" },
 ]
 
 [[package]]
@@ -2582,6 +2602,21 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/91/4c/075e4f66471bac101141ac739e9e135549be1bae584571bd03a530c056e1/scipy-1.18.1-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:d2924a03db38dc2e848bca2fe9f077dafb891480b91a00a0963a8cf86dfc31c1", size = 37480330, upload-time = "2026-08-21T23:24:19.608Z" },
     { url = "https://files.pythonhosted.org/packages/39/e7/979fd14e75008623df31ba70d6bb144700f68feadcea042021c06a05bf82/scipy-1.18.1-cp312-cp312-win_amd64.whl", hash = "sha256:5e4d44984abc0020154ea81b247adeddcc3ac5527b975ff798bd1ba0adc513c2", size = 36658278, upload-time = "2026-08-21T23:24:25.463Z" },
     { url = "https://files.pythonhosted.org/packages/c7/0b/e1525354ff9d7d5feb6d1b31af6d14072e5c91e9607b421fa1ec889660b3/scipy-1.18.1-cp312-cp312-win_arm64.whl", hash = "sha256:d65d448389b8436493abcf629cc94ad0cf32aecaf06e1acca1de53cc795f2f12", size = 24400588, upload-time = "2026-08-21T23:24:30.579Z" },
+]
+
+[[package]]
+name = "seaborn"
+version = "0.13.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "matplotlib" },
+    { name = "numpy", version = "2.3.5", source = { registry = "https://pypi.org/simple" }, marker = "platform_machine == 'x86_64' and sys_platform == 'darwin'" },
+    { name = "numpy", version = "2.5.3", source = { registry = "https://pypi.org/simple" }, marker = "platform_machine != 'x86_64' or sys_platform != 'darwin'" },
+    { name = "pandas" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/86/59/a451d7420a77ab0b98f7affa3a1d78a313d2f7281a57afb1a34bae8ab412/seaborn-0.13.2.tar.gz", hash = "sha256:93e60a40988f4d65e9f4885df477e2fdaff6b73a9ded434c1ab356dd57eefff7", size = 1457696, upload-time = "2024-01-25T13:21:52.551Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/83/11/00d3c3dfc25ad54e731d91449895a79e4bf2384dc3ac01809010ba88f6d5/seaborn-0.13.2-py3-none-any.whl", hash = "sha256:636f8336facf092165e27924f223d3c62ca560b1f2bb5dff7ab7fad265361987", size = 294914, upload-time = "2024-01-25T13:21:49.598Z" },
 ]
 
 [[package]]
